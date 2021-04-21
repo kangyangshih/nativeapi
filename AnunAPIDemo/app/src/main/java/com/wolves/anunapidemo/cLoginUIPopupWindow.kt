@@ -48,6 +48,7 @@ class cLoginUIPopupWindow (context : Context, builder: ConfirmPopupWindowBuilder
         }
     }
 
+    // 做顯示的動作
     fun show() {
         showAtLocation(contentView, Gravity.CENTER, 0, 0)
     }
