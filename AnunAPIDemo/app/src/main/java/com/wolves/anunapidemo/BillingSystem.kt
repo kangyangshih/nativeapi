@@ -18,22 +18,26 @@ object BillingSystem {
         println("~【initObject】BillingSystem ~")
         // 使用的實體
         this.mContext = context
+    }
+
+    fun setSkus (items : Array<String>){
         //----------------------------------------------
         // 設定儲值相關的API
         //----------------------------------------------
         // 設定購買相關物品
         GoogleBillingUtil.isDebug(true)
         // 設定商品列表
-        GoogleBillingUtil.setSkus(arrayOf(
-            "first_happy_33",
-            "first_happy_170",
-            "happy_a_33",
-            "happy_a_170",
-            "happy_a_330",
-            "happy_a_490",
-            "happy_a_990",
-            "happy_a_1690",
-            "happy_a_3290"), arrayOf())
+        //GoogleBillingUtil.setSkus(arrayOf(
+        //    "first_happy_33",
+        //    "first_happy_170",
+        //    "happy_a_33",
+        //    "happy_a_170",
+        //    "happy_a_330",
+        //    "happy_a_490",
+        //    "happy_a_990",
+        //    "happy_a_1690",
+        //    "happy_a_3290"), arrayOf())
+        GoogleBillingUtil.setSkus(items, arrayOf())
         // 設定要處理的 class
         var bl = OnMyGoogleBillingListener()
         googleBillingUtil = GoogleBillingUtil.getInstance()
