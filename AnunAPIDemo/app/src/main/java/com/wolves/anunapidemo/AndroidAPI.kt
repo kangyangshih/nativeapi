@@ -2,9 +2,32 @@
 
 package com.wolves.anunapidemo
 
+import android.content.pm.PackageManager
+import android.util.Base64
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.facebook.login.widget.LoginButton
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 object AndroidAPI {
+
+    // for fackbook 串接做使用
+    private fun showAPKHashCode () {
+        try {
+            val info = this.mContext.packageManager.getPackageInfo(
+                    "com.wolvesdigital.biga",
+                    PackageManager.GET_SIGNATURES
+            )
+            for (signature in info.signatures) {
+                val md: MessageDigest = MessageDigest.getInstance("SHA")
+                md.update(signature.toByteArray())
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT))
+            }
+        } catch (e: PackageManager.NameNotFoundException) {
+        } catch (e: NoSuchAlgorithmException) {
+        }
+    }
 
     // 使用的活動實體
     lateinit var mContext: AppCompatActivity
@@ -17,8 +40,10 @@ object AndroidAPI {
         this.mContext = context
         // 初使化實體
         BillingSystem.initObject(context)
+        FBSystem.initObject(context)
         // 打開介面
         //mLoginUIPopupWindow = cLoginUIPopupWindow.ConfirmPopupWindowBuilder.init(this.mContext).build()
+        showAPKHashCode ()
     }
 
     //--------------------------------------------------
@@ -47,5 +72,8 @@ object AndroidAPI {
     //--------------------------------------------------
     // FB 登入
     //--------------------------------------------------
-
+    lateinit var mLoginFBFinish: (String) -> Unit
+    fun LoginFB (callback: (String)->Unit) {
+        println ("~【AndroidAPI】LoginFB")
+    }
 }
