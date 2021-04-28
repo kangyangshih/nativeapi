@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF21C9F12456E19D00EAD6BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF21C9F02456E19D00EAD6BC /* AppDelegate.swift */; };
+		CF21C9F32456E19D00EAD6BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF21C9F22456E19D00EAD6BC /* ViewController.swift */; };
+		CF21C9F62456E19D00EAD6BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF21C9F42456E19D00EAD6BC /* Main.storyboard */; };
+		CF21C9F82456E19E00EAD6BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF21C9F72456E19E00EAD6BC /* Assets.xcassets */; };
+		CF23A9F925CBE9F6005B64B7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF23A9F825CBE9F6005B64B7 /* StoreKit.framework */; };
+		CF3DAF79263940DE00B99F09 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = CF3DAF78263940DE00B99F09 /* FacebookLogin */; };
+		CF3DAF7D2639497800B99F09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3DAF7C2639497800B99F09 /* SceneDelegate.swift */; };
+		CF47E788245975A000237E3A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E787245975A000237E3A /* ActionButton.swift */; };
+		CF47E78A245975BB00237E3A /* ActionButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E789245975BB00237E3A /* ActionButtonItem.swift */; };
+		CF47E78F2459779400237E3A /* JDJellyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E78E2459779400237E3A /* JDJellyButtonView.swift */; };
+		CF47E791245977AF00237E3A /* JDJellyMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E790245977AF00237E3A /* JDJellyMainButton.swift */; };
+		CF47E793245977C900237E3A /* JDJellyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E792245977C900237E3A /* JDJellyButton.swift */; };
+		CF6F96B925CCF27200EABA03 /* ExtendsFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6F96B825CCF27200EABA03 /* ExtendsFunc.swift */; };
+		CF6F96D725CCF62500EABA03 /* SKProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6F96D425CCF62500EABA03 /* SKProduct+Extensions.swift */; };
+		CF6F96D825CCF62500EABA03 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6F96D525CCF62500EABA03 /* IAPManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CF21C9ED2456E19D00EAD6BC /* 大A娛樂城.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "大A娛樂城.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF21C9F02456E19D00EAD6BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF21C9F22456E19D00EAD6BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF21C9F52456E19D00EAD6BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF21C9F72456E19E00EAD6BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF21C9FC2456E19E00EAD6BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF23A9F825CBE9F6005B64B7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CF3DAF7C2639497800B99F09 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CF47E787245975A000237E3A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		CF47E789245975BB00237E3A /* ActionButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonItem.swift; sourceTree = "<group>"; };
+		CF47E78E2459779400237E3A /* JDJellyButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDJellyButtonView.swift; sourceTree = "<group>"; };
+		CF47E790245977AF00237E3A /* JDJellyMainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDJellyMainButton.swift; sourceTree = "<group>"; };
+		CF47E792245977C900237E3A /* JDJellyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDJellyButton.swift; sourceTree = "<group>"; };
+		CF6F96B825CCF27200EABA03 /* ExtendsFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendsFunc.swift; sourceTree = "<group>"; };
+		CF6F96D425CCF62500EABA03 /* SKProduct+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKProduct+Extensions.swift"; sourceTree = "<group>"; };
+		CF6F96D525CCF62500EABA03 /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		CF7FF90624B440B40002C8B7 /* anunipa copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "anunipa copy-Info.plist"; path = "/Users/kangyang/Desktop/anunipa/anunipa copy-Info.plist"; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF21C9EA2456E19D00EAD6BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3DAF79263940DE00B99F09 /* FacebookLogin in Frameworks */,
+				CF23A9F925CBE9F6005B64B7 /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF21C9E42456E19D00EAD6BC = {
+			isa = PBXGroup;
+			children = (
+				CF21C9EF2456E19D00EAD6BC /* anunipa */,
+				CF21C9EE2456E19D00EAD6BC /* Products */,
+				CF7FF90624B440B40002C8B7 /* anunipa copy-Info.plist */,
+				CF23A9F725CBE9F6005B64B7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CF21C9EE2456E19D00EAD6BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF21C9ED2456E19D00EAD6BC /* 大A娛樂城.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF21C9EF2456E19D00EAD6BC /* anunipa */ = {
+			isa = PBXGroup;
+			children = (
+				CF47E78B245976B700237E3A /* JDJellyButton */,
+				CF47E7862459758500237E3A /* ActionButton */,
+				CF21C9F02456E19D00EAD6BC /* AppDelegate.swift */,
+				CF21C9F42456E19D00EAD6BC /* Main.storyboard */,
+				CF21C9F72456E19E00EAD6BC /* Assets.xcassets */,
+				CF21C9FC2456E19E00EAD6BC /* Info.plist */,
+				CF21C9F22456E19D00EAD6BC /* ViewController.swift */,
+				CF6F96B825CCF27200EABA03 /* ExtendsFunc.swift */,
+				CF6F96D525CCF62500EABA03 /* IAPManager.swift */,
+				CF6F96D425CCF62500EABA03 /* SKProduct+Extensions.swift */,
+				CF3DAF7C2639497800B99F09 /* SceneDelegate.swift */,
+			);
+			path = anunipa;
+			sourceTree = "<group>";
+		};
+		CF23A9F725CBE9F6005B64B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF23A9F825CBE9F6005B64B7 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF47E7862459758500237E3A /* ActionButton */ = {
+			isa = PBXGroup;
+			children = (
+				CF47E787245975A000237E3A /* ActionButton.swift */,
+				CF47E789245975BB00237E3A /* ActionButtonItem.swift */,
+			);
+			path = ActionButton;
+			sourceTree = "<group>";
+		};
+		CF47E78B245976B700237E3A /* JDJellyButton */ = {
+			isa = PBXGroup;
+			children = (
+				CF47E792245977C900237E3A /* JDJellyButton.swift */,
+				CF47E790245977AF00237E3A /* JDJellyMainButton.swift */,
+				CF47E78E2459779400237E3A /* JDJellyButtonView.swift */,
+			);
+			path = JDJellyButton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF21C9EC2456E19D00EAD6BC /* anunipa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF21C9FF2456E19E00EAD6BC /* Build configuration list for PBXNativeTarget "anunipa" */;
+			buildPhases = (
+				CF21C9E92456E19D00EAD6BC /* Sources */,
+				CF21C9EA2456E19D00EAD6BC /* Frameworks */,
+				CF21C9EB2456E19D00EAD6BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = anunipa;
+			packageProductDependencies = (
+				CF3DAF78263940DE00B99F09 /* FacebookLogin */,
+			);
+			productName = anunipa;
+			productReference = CF21C9ED2456E19D00EAD6BC /* 大A娛樂城.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF21C9E52456E19D00EAD6BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = wolves;
+				TargetAttributes = {
+					CF21C9EC2456E19D00EAD6BC = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = CF21C9E82456E19D00EAD6BC /* Build configuration list for PBXProject "anunipa" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF21C9E42456E19D00EAD6BC;
+			packageReferences = (
+				CF3DAF77263940DE00B99F09 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
+			productRefGroup = CF21C9EE2456E19D00EAD6BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF21C9EC2456E19D00EAD6BC /* anunipa */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF21C9EB2456E19D00EAD6BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF21C9F82456E19E00EAD6BC /* Assets.xcassets in Resources */,
+				CF21C9F62456E19D00EAD6BC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF21C9E92456E19D00EAD6BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF47E78A245975BB00237E3A /* ActionButtonItem.swift in Sources */,
+				CF47E78F2459779400237E3A /* JDJellyButtonView.swift in Sources */,
+				CF6F96D825CCF62500EABA03 /* IAPManager.swift in Sources */,
+				CF21C9F32456E19D00EAD6BC /* ViewController.swift in Sources */,
+				CF6F96B925CCF27200EABA03 /* ExtendsFunc.swift in Sources */,
+				CF6F96D725CCF62500EABA03 /* SKProduct+Extensions.swift in Sources */,
+				CF47E793245977C900237E3A /* JDJellyButton.swift in Sources */,
+				CF3DAF7D2639497800B99F09 /* SceneDelegate.swift in Sources */,
+				CF21C9F12456E19D00EAD6BC /* AppDelegate.swift in Sources */,
+				CF47E788245975A000237E3A /* ActionButton.swift in Sources */,
+				CF47E791245977AF00237E3A /* JDJellyMainButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF21C9F42456E19D00EAD6BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF21C9F52456E19D00EAD6BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF21C9FD2456E19E00EAD6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF21C9FE2456E19E00EAD6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF21CA002456E19E00EAD6BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 203;
+				DEVELOPMENT_TEAM = A6PD55XZVU;
+				INFOPLIST_FILE = anunipa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolvesdigital.biga;
+				PRODUCT_NAME = "大A娛樂城";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF21CA012456E19E00EAD6BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 203;
+				DEVELOPMENT_TEAM = A6PD55XZVU;
+				INFOPLIST_FILE = anunipa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolvesdigital.biga;
+				PRODUCT_NAME = "大A娛樂城";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF21C9E82456E19D00EAD6BC /* Build configuration list for PBXProject "anunipa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF21C9FD2456E19E00EAD6BC /* Debug */,
+				CF21C9FE2456E19E00EAD6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CF21C9FF2456E19E00EAD6BC /* Build configuration list for PBXNativeTarget "anunipa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF21CA002456E19E00EAD6BC /* Debug */,
+				CF21CA012456E19E00EAD6BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF3DAF77263940DE00B99F09 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 9.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF3DAF78263940DE00B99F09 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF3DAF77263940DE00B99F09 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CF21C9E52456E19D00EAD6BC /* Project object */;
+}
