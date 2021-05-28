@@ -25,9 +25,7 @@ object FBSystem {
         // 使用的實體
         this.mContext = context
 
-        FacebookSdk.sdkInitialize(this.mContext.getApplicationContext());
-        AppEventsLogger.activateApp(this.mContext);
-        callbackManager = CallbackManager.Factory.create();
+        callbackManager = CallbackManager.Factory.create()
         val loginButton = this.mContext.findViewById<LoginButton>(com.wolves.anunapidemo.R.id.login_button)
         loginButton.setReadPermissions("email");
         // If using in a fragment

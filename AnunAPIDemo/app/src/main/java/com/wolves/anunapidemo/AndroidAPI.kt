@@ -40,7 +40,7 @@ object AndroidAPI {
         this.mContext = context
         // 初使化實體
         BillingSystem.initObject(context)
-        FBSystem.initObject(context)
+        //FBSystem.initObject(context)
         // 打開介面
         //mLoginUIPopupWindow = cLoginUIPopupWindow.ConfirmPopupWindowBuilder.init(this.mContext).build()
         showAPKHashCode()

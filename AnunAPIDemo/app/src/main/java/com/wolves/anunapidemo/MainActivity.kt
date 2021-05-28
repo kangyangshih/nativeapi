@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         // [API] 做初使化的動作
         setContentView(R.layout.activity_main)
+        // 做 FB 的初使化
+        FBSystem.initObject(this)
     }
 
     // 【範例】 開啟登入/儲值面版 (實作中)
