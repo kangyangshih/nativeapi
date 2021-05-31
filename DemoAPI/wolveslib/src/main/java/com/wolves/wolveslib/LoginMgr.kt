@@ -8,6 +8,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -36,6 +37,19 @@ object LoginMgr {
 
         // 設定大小
         dialog.window?.setLayout(400, 300)
+
+        // 設定按鈕動作
+        val btn_login = dialog.findViewById<Button>(com.wolves.wolveslib.R.id.btn_login_account)
+        btn_login.setOnClickListener {
+            println ("[LoginMgr] btn_login")
+            dialog.dismiss()
+        }
+        val btn_fb = dialog.findViewById<Button>(com.wolves.wolveslib.R.id.btn_login_fb)
+        btn_fb.setOnClickListener {
+            println ("[LoginMgr] btn_fb")
+            dialog.dismiss()
+        }
+
         //-----------------------------------------------
         // 第三種方法
     }
