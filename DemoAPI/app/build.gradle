@@ -4,11 +4,19 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\download\\anun_native\\wd.jks')
+            storePassword '123qwe'
+            keyAlias 'key0'
+            keyPassword '123qwe'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.wolves.demoapi"
+        applicationId "com.wolvesdigital.biga"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

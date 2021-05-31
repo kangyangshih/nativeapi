@@ -1,0 +1,5 @@
+<resources>
+    <!-- Facebook 串接 -->
+    <string name="facebook_app_id">209085030870047</string>
+    <string name="fb_login_protocol_scheme">fb209085030870047</string>
+</resources>

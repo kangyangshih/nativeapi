@@ -5,12 +5,6 @@ package com.wolves.wolveslib
 import androidx.appcompat.app.AppCompatActivity
 
 object WolvesAPI {
-    // 做初使化的動作
-    fun onInit(context: AppCompatActivity) {
-        // 做顯示的動作
-        AndroidAPI.showMsg("[WolvesAPI] onInit")
-    }
-
     // 開啟登入面版
     fun onLogin(context: AppCompatActivity) {
         AndroidAPI.showMsg("[WolvesAPI] onLogin")
@@ -18,13 +12,19 @@ object WolvesAPI {
         LoginMgr.onLogin(context)
     }
 
-    // 實作儲值的動作
-    fun onDeposite() {
-        AndroidAPI.showMsg("[WolvesAPI] onDeposite")
+    //--------------------------------------------------
+    // 儲值功能
+    //--------------------------------------------------
+    // 設定商品
+    fun setSkus(context: AppCompatActivity, items: Array<String>) {
+        BillMgr.setSkus(context, items)
     }
 
-    // 實作登入FB的動作
-    fun onFB() {
-        AndroidAPI.showMsg("[WolvesAPI] onFB")
+    // 給儲值成功呼叫的 callback
+    lateinit var mDepositeFinish: (String) -> Unit
+    fun depositeMoneyStr(context: AppCompatActivity, itemStr: String, callback: (String) -> Unit) {
+        println("~【AndroidAPI】depositeMoneyStr : $itemStr")
+        this.mDepositeFinish = callback
+        BillMgr.googleBillingUtil.purchaseInApp(context, itemStr)
     }
 }
