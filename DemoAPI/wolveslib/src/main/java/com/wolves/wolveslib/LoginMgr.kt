@@ -4,10 +4,8 @@
 package com.wolves.wolveslib
 
 import android.app.AlertDialog
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,7 +15,7 @@ object LoginMgr {
     // 跳出登入介面
     fun onLogin(context: AppCompatActivity) {
         println("[LoginMgr] onLogin")
-        //-----------------------------------------------
+        //--------------------------------------------ㄌ---
         // 第一種動態跳出的方式
         // 取得主介面的 float
         //val flater = LayoutInflater.from(context)
@@ -44,13 +42,27 @@ object LoginMgr {
             println ("[LoginMgr] btn_login")
             dialog.dismiss()
         }
+
         val btn_fb = dialog.findViewById<Button>(com.wolves.wolveslib.R.id.btn_login_fb)
         btn_fb.setOnClickListener {
             println ("[LoginMgr] btn_fb")
-            dialog.dismiss()
+            LoginFB (context)
+            //dialog.dismiss()
         }
 
-        //-----------------------------------------------
-        // 第三種方法
+        FBMgr.initObject(context, dialog)
+    }
+
+    //--------------------------------------------------
+    // FB 登入
+    //--------------------------------------------------
+    fun LoginFB(context: AppCompatActivity) {
+        println("~【AndroidAPI】LoginFB")
+        FBMgr.loginFB()
+    }
+
+    fun onFBCallback (openid : String)
+    {
+        println("~【AndroidAPI】openID : [$openid]")
     }
 }
