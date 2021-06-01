@@ -23,6 +23,9 @@ object FBMgr {
             return
         }
         isInit = true
+        AndroidAPI.showAPKHashCode (context)
+        FacebookSdk.setIsDebugEnabled(true)
+        FacebookSdk.setAutoLogAppEventsEnabled(true)
         // 使用的實體
         this.mContext = context
         this.mDialog = dialog
@@ -32,18 +35,17 @@ object FBMgr {
         // If using in a fragment
         loginButton?.registerCallback(callbackManager, object : FacebookCallback<LoginResult?> {
             override fun onSuccess(loginResult: LoginResult?) {
-                Log.d("TAG", "Success Login")
-                Log.d("TAG", loginResult?.accessToken?.userId.toString())
+                println ("onSuccess")
                 // Get User's Info
                 getUserProfile(loginResult?.accessToken, loginResult?.accessToken?.userId)
             }
 
             override fun onCancel() {
-                Log.d("TAG", "onCancel")
+                println ("onCancel")
             }
 
             override fun onError(exception: FacebookException) {
-                Log.d("TAG", "onError")
+                println ("onError")
             }
         })
     }
@@ -107,6 +109,7 @@ object FBMgr {
     var mDialog : AlertDialog? = null
     // 做登入FB的動作
     fun loginFB() {
+        println ("[FBMgr] loginFB")
         this.mContext.runOnUiThread(java.lang.Runnable
         {
             // 做登入的動作

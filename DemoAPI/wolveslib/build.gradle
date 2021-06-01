@@ -47,4 +47,6 @@ dependencies {
     // FB
     implementation 'com.facebook.android:facebook-android-sdk:8.2.0'
     implementation 'com.facebook.android:facebook-login:8.2.0'
+    // 網路 http
+    compile 'com.squareup.okhttp3:okhttp:3.11.0'
 }

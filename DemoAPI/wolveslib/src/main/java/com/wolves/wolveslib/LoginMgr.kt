@@ -7,7 +7,11 @@ import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import okhttp3.*
+import org.json.JSONObject
+import java.io.IOException
 
 
 object LoginMgr {
@@ -39,17 +43,24 @@ object LoginMgr {
         // 設定按鈕動作
         val btn_login = dialog.findViewById<Button>(com.wolves.wolveslib.R.id.btn_login_account)
         btn_login.setOnClickListener {
-            println ("[LoginMgr] btn_login")
+            println("[LoginMgr] btn_login")
+            WebAPI.createGuest { jsonStr ->
+                //println("[LoginMgr] callback createGuest:$jsonStr")
+                context.runOnUiThread {
+                    Toast.makeText(context, "[LoginMgr] callback createGuest:$jsonStr", Toast.LENGTH_LONG).show();
+                }
+            }
+            // 關閉視窗
             dialog.dismiss()
         }
 
         val btn_fb = dialog.findViewById<Button>(com.wolves.wolveslib.R.id.btn_login_fb)
         btn_fb.setOnClickListener {
-            println ("[LoginMgr] btn_fb")
-            LoginFB (context)
+            println("[LoginMgr] btn_fb")
+            LoginFB(context)
             //dialog.dismiss()
         }
-
+        // 初使化FB
         FBMgr.initObject(context, dialog)
     }
 
@@ -61,8 +72,7 @@ object LoginMgr {
         FBMgr.loginFB()
     }
 
-    fun onFBCallback (openid : String)
-    {
+    fun onFBCallback(openid: String) {
         println("~【AndroidAPI】openID : [$openid]")
     }
 }
