@@ -7,12 +7,12 @@ import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
-
 
 object LoginMgr {
 
@@ -38,28 +38,57 @@ object LoginMgr {
         dialog.show()
 
         // 設定大小
-        dialog.window?.setLayout(400, 300)
+        dialog.window?.setLayout(400, 320)
 
-        // 設定按鈕動作
+        // Guest 登入
         val btn_login = dialog.findViewById<Button>(com.wolves.wolveslib.R.id.btn_login_account)
         btn_login.setOnClickListener {
             println("[LoginMgr] btn_login")
-            WebAPI.createGuest { jsonStr ->
+            // 產生帳號
+            WebAPI.createGuest { jsonObject ->
                 //println("[LoginMgr] callback createGuest:$jsonStr")
                 context.runOnUiThread {
-                    Toast.makeText(context, "[LoginMgr] callback createGuest:$jsonStr", Toast.LENGTH_LONG).show();
+                    var account : String = jsonObject.getString ("account")
+                    var password : String = jsonObject.getString("password")
+                    Toast.makeText(context, "[LoginMgr][createGuest] $account, $password", Toast.LENGTH_LONG).show();
                 }
             }
+
+            // 登入
+            //WebAPI.login("g658118095", "mwmCePfZklIf9spck4eY") { jsonStr ->
+            //    context.runOnUiThread {
+            //        Toast.makeText(
+            //            context,
+            //            "[LoginMgr] callback createGuest:$jsonStr",
+            //            Toast.LENGTH_LONG
+            //        ).show();
+            //    }
+            //}
+
+            // 取得用戶資訊
+            //WebAPI.userInfo("bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdXNlci1hbnVuLnlvbmd4dS5jb20udHdcL2FudW5cL3YxXC9sb2dpbiIsImlhdCI6MTYyMjU1MzkzMywiZXhwIjoxNjIyNTc1NTMzLCJuYmYiOjE2MjI1NTM5MzMsImp0aSI6Ilo3b21LYVVtY3VsMGQyazAiLCJzdWIiOjcwMjU4NzA4NDk1NjAxNjY0LCJwcnYiOiI4NjY1YWU5Nzc1Y2YyNmY2YjhlNDk2Zjg2ZmE1MzZkNjhkZDcxODE4In0.G7zyOcDyUZgdrSb3SbAXPTQcogh1vIridgtlBsjTdds"){ jsonStr ->
+            //    context.runOnUiThread {
+            //        Toast.makeText(
+            //            context,
+            //            "[LoginMgr] callback createGuest:$jsonStr",
+            //            Toast.LENGTH_LONG
+            //        ).show();
+            //    }
+            //}
             // 關閉視窗
             dialog.dismiss()
         }
 
+        //-----------------------------------------------
+        // FB 登入
         val btn_fb = dialog.findViewById<Button>(com.wolves.wolveslib.R.id.btn_login_fb)
         btn_fb.setOnClickListener {
             println("[LoginMgr] btn_fb")
             LoginFB(context)
             //dialog.dismiss()
         }
+
+        //-----------------------------------------------
         // 初使化FB
         FBMgr.initObject(context, dialog)
     }
