@@ -28,9 +28,9 @@ object WebAPI {
                 println (responseStr)
                 val itemMap = JSONObject(responseStr)
                 //println (itemMap.getJSONObject("data").get ("account"))
-                res.put ("account", itemMap.getJSONObject("data").get ("account"))
+                res.put ("account", itemMap.getJSONObject("data").getString ("account"))
                 //println (itemMap.getJSONObject("data").get ("password"))
-                res.put ("password", itemMap.getJSONObject("data").get ("password"))
+                res.put ("password", itemMap.getJSONObject("data").getString ("password"))
                 callback (res)
             }
         })
@@ -58,19 +58,20 @@ object WebAPI {
                 //處理回來的 Response
                 val responseStr = response!!.body()!!.string()
                 println (responseStr)
-                callback (responseStr)
-                //val itemList = JSONObject(responseStr)
+                val itemMap = JSONObject(responseStr)
+                callback (itemMap.getJSONObject("data").getString ("token"))
             }
         })
     }
 
     //---------------------------------------------------
     // 用戶資訊
+    // {"data":{"token":"bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdXNlci1hbnVuLnlvbmd4dS5jb20udHdcL2FudW5cL3YxXC9sb2dpbiIsImlhdCI6MTYyMjYwMjM3MiwiZXhwIjoxNjIyNjIzOTcyLCJuYmYiOjE2MjI2MDIzNzIsImp0aSI6IkxROXVvczBrVjhoZDFsaFIiLCJzdWIiOjcwMjU4NzA4NDk1NjAxNjY0LCJwcnYiOiI4NjY1YWU5Nzc1Y2YyNmY2YjhlNDk2Zjg2ZmE1MzZkNjhkZDcxODE4In0.4_O98QQ5LZ8JcWKitnJ0P4f9VUVJ2RC4azRTyz4rQ7c"},"code":1}
     // token : bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdXNlci1hbnVuLnlvbmd4dS5jb20udHdcL2FudW5cL3YxXC9sb2dpbiIsImlhdCI6MTYyMjU1MzkzMywiZXhwIjoxNjIyNTc1NTMzLCJuYmYiOjE2MjI1NTM5MzMsImp0aSI6Ilo3b21LYVVtY3VsMGQyazAiLCJzdWIiOjcwMjU4NzA4NDk1NjAxNjY0LCJwcnYiOiI4NjY1YWU5Nzc1Y2YyNmY2YjhlNDk2Zjg2ZmE1MzZkNjhkZDcxODE4In0.G7zyOcDyUZgdrSb3SbAXPTQcogh1vIridgtlBsjTdds
-    fun userInfo (token:String, callback: (String) -> Unit) {
+    fun userInfo (token:String, callback: (JSONObject) -> Unit) {
         val okHttpClient = OkHttpClient()
         val request = Request.Builder()
-            .addHeader("authorization", "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdXNlci1hbnVuLnlvbmd4dS5jb20udHdcL2FudW5cL3YxXC9sb2dpbiIsImlhdCI6MTYyMjU1MzkzMywiZXhwIjoxNjIyNTc1NTMzLCJuYmYiOjE2MjI1NTM5MzMsImp0aSI6Ilo3b21LYVVtY3VsMGQyazAiLCJzdWIiOjcwMjU4NzA4NDk1NjAxNjY0LCJwcnYiOiI4NjY1YWU5Nzc1Y2YyNmY2YjhlNDk2Zjg2ZmE1MzZkNjhkZDcxODE4In0.G7zyOcDyUZgdrSb3SbAXPTQcogh1vIridgtlBsjTdds")
+            .addHeader("authorization", token)
             .url("https://user-anun.yongxu.com.tw/anun/v1/user")
             .get()
             .build()
@@ -84,8 +85,27 @@ object WebAPI {
                 //處理回來的 Response
                 val responseStr = response!!.body()!!.string()
                 println (responseStr)
-                callback (responseStr)
-                //val itemList = JSONObject(responseStr)
+                val itemMap = JSONObject(responseStr)
+                callback (itemMap.getJSONObject("data"))
+            }
+        })
+    }
+
+    fun getFBID () {
+        val okHttpClient = OkHttpClient()
+        val request = Request.Builder()
+            .url("https://front.fishrush.com.tw/website/profile")
+            .get()
+            .build()
+        val call = okHttpClient.newCall(request)
+        call.enqueue(object : Callback {
+            override fun onFailure(call: Call?, e: IOException?) {
+                println("fail : $e")
+            }
+            override fun onResponse(call: Call?, response: Response?) {
+                //處理回來的 Response
+                val responseStr = response!!.body()!!.string()
+                println (responseStr)
             }
         })
     }

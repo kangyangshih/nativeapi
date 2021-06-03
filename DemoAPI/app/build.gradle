@@ -16,7 +16,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.wolves.demoapi"
+        applicationId "com.wolvesdigital.biga"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

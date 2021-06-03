@@ -50,31 +50,10 @@ object LoginMgr {
                 context.runOnUiThread {
                     var account : String = jsonObject.getString ("account")
                     var password : String = jsonObject.getString("password")
-                    Toast.makeText(context, "[LoginMgr][createGuest] $account, $password", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "[LoginMgr][createGuest] $account, $password", Toast.LENGTH_LONG).show()
                 }
             }
 
-            // 登入
-            //WebAPI.login("g658118095", "mwmCePfZklIf9spck4eY") { jsonStr ->
-            //    context.runOnUiThread {
-            //        Toast.makeText(
-            //            context,
-            //            "[LoginMgr] callback createGuest:$jsonStr",
-            //            Toast.LENGTH_LONG
-            //        ).show();
-            //    }
-            //}
-
-            // 取得用戶資訊
-            //WebAPI.userInfo("bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdXNlci1hbnVuLnlvbmd4dS5jb20udHdcL2FudW5cL3YxXC9sb2dpbiIsImlhdCI6MTYyMjU1MzkzMywiZXhwIjoxNjIyNTc1NTMzLCJuYmYiOjE2MjI1NTM5MzMsImp0aSI6Ilo3b21LYVVtY3VsMGQyazAiLCJzdWIiOjcwMjU4NzA4NDk1NjAxNjY0LCJwcnYiOiI4NjY1YWU5Nzc1Y2YyNmY2YjhlNDk2Zjg2ZmE1MzZkNjhkZDcxODE4In0.G7zyOcDyUZgdrSb3SbAXPTQcogh1vIridgtlBsjTdds"){ jsonStr ->
-            //    context.runOnUiThread {
-            //        Toast.makeText(
-            //            context,
-            //            "[LoginMgr] callback createGuest:$jsonStr",
-            //            Toast.LENGTH_LONG
-            //        ).show();
-            //    }
-            //}
             // 關閉視窗
             dialog.dismiss()
         }
