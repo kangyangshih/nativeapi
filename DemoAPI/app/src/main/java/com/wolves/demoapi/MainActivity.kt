@@ -78,8 +78,15 @@ class MainActivity : AppCompatActivity() {
 
     fun onWebFBID(view: View) {
         println ("[MainActivity] onWebFBID")
-        WolvesAPI.getWebFBID(this, this.findViewById(R.id.main_root)){ key ->
-            toLog("[MainActivity] onWebFBID:$key")
+        WolvesAPI.getWebFBID(this, this.findViewById(R.id.main_root), "https://front.fishrush.com.tw/website/info"){ key, token, url ->
+            toLog("[MainActivity] onWebFBID:$key $token $url")
+        }
+    }
+
+    fun onWeb(view: View) {
+        println ("[MainActivity] onWebFBID")
+        WolvesAPI.getWebFBID(this, this.findViewById(R.id.main_root),"https://wildgoldrush.wolves.com.tw/website/"){ key, token, url ->
+            toLog("[MainActivity] onWebFBID:$key $token $url")
         }
     }
 

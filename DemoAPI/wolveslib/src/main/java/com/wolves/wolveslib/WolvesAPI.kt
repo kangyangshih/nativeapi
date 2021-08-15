@@ -50,13 +50,14 @@ object WolvesAPI {
 
     //-----------------------------------------------------------------
     // 從 web 取得 webID
+    @SuppressLint("StaticFieldLeak")
     @JavascriptInterface
-    fun FBIDFeedback (key:String)
+    fun FBIDFeedback (key:String, token:String, url:String)
     {
         println ("[WolvesAPI] FBIDFeedback, key:$key")
         mContext?.runOnUiThread {
             this.mRootView?.removeView(this.mWebViewView)
-            mCallback(key)
+            mCallback(key, token, url)
             mRootView = null
             mWebViewView = null
         }
@@ -65,10 +66,10 @@ object WolvesAPI {
     var mRootView : ViewGroup? = null
     var mWebViewView : View? = null
     var mContext: AppCompatActivity? = null
-    lateinit var mCallback: (String) -> Unit
+    lateinit var mCallback: (String, String, String) -> Unit
 
-    @SuppressLint("JavascriptInterface")
-    fun getWebFBID (context: AppCompatActivity, rootView:ViewGroup, callback: (String) -> Unit) {
+    @SuppressLint("JavascriptInterface", "StaticFieldLeak")
+    fun getWebFBID (context: AppCompatActivity, rootView:ViewGroup, url:String, callback: (String, String, String) -> Unit) {
         println ("[WolvesAPI] getWebFBID")
         // 開啟 webview
         //val builder: AlertDialog.Builder = AlertDialog.Builder(context)
@@ -81,6 +82,8 @@ object WolvesAPI {
         val flater = LayoutInflater.from(context)
         // 把介面動態塞進去
         val view: View = flater.inflate(com.wolves.wolveslib.R.layout.web_fb, null)
+        // 要設置這個才能壓在 button 上面。
+        view.elevation = 2.0f
         rootView.addView(view)
         mRootView = rootView
         mWebViewView = view
@@ -97,8 +100,8 @@ object WolvesAPI {
         val webSettings = webview.settings
         // 打開  webview javascript 的功能
         webSettings.javaScriptEnabled = true
+        //webSettings.setDomStorageEnabled(false)
         // 設定可以儲存的動作
-        webSettings.setDomStorageEnabled(true)
         // 設定畫面
         //context.setContentView(webview)
         // 產生 webview
@@ -106,6 +109,8 @@ object WolvesAPI {
         // 注入給 webview 使用的 kotlin function
         webview.addJavascriptInterface (this, "wd")
         // 載入想開的網址
-        webview.loadUrl("https://front.fishrush.com.tw/website/info")
+        webview.loadUrl(url)
+        //webview.loadUrl("https://front.fishrush.com.tw/website/")
+        //webview.loadUrl("https://wildgoldrush.wolves.com.tw/website/info")
     }
 }
